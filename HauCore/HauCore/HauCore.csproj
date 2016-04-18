@@ -41,12 +41,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\FieldInfoAttribute.cs" />
+    <Compile Include="Attributes\Validators\ValidatorAttribute.cs" />
+    <Compile Include="Extensions\DataTableExtension.cs" />
+    <Compile Include="Extensions\ExpressionExtension.cs" />
     <Compile Include="Extensions\MemberInfoExtension.cs" />
+    <Compile Include="Extensions\NameValueCollectionExtension.cs" />
     <Compile Include="Extensions\ObjectExtension.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Extensions\TypeExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflectors\ReflectAttribute.cs" />
     <Compile Include="Reflectors\ReflectListAttribute.cs" />
+    <Compile Include="Reflectors\ReflectTypeListProperty.cs" />
+    <Compile Include="Reflectors\ReflectTypeListPropertyPublic.cs" />
+    <Compile Include="Reflectors\ReflectTypeListPropertyWithAttribute.cs" />
+    <Compile Include="Reflectors\ReflectTypeListPropertyWithListAttribute.cs" />
     <Compile Include="Types\BooleanConverter.cs" />
     <Compile Include="Types\ByteConverter.cs" />
     <Compile Include="Types\DateTimeConverter.cs" />
@@ -64,6 +73,7 @@
     <Compile Include="Types\TypeConverterBase.cs" />
     <Compile Include="Utility\DictionaryCacheBase.cs" />
     <Compile Include="Utility\MemberInfoHelper.cs" />
+    <Compile Include="Utility\Model.cs" />
     <Compile Include="Utility\Pair.cs" />
     <Compile Include="Utility\Singleton.cs" />
   </ItemGroup>

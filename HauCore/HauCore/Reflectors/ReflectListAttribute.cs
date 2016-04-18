@@ -1,7 +1,9 @@
-﻿using HauCore.Utility;
+﻿#region  ******** Copyright © 2016 HauCore ********
+using HauCore.Utility;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+#endregion  ******** Copyright © 2016 HauCore ********
 
 namespace HauCore.Reflectors
 {
