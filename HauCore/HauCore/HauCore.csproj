@@ -78,7 +78,9 @@
     <Compile Include="Utility\Pair.cs" />
     <Compile Include="Utility\Singleton.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DataBase\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="teamplate.txt" />
   </ItemGroup>
