@@ -23,23 +23,23 @@ namespace HauCore.Types
         /// <param name="value"></param>
         /// <param name="typeCode"></param>
         /// <returns></returns>
-        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, TypeCode typeCode)
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, HTypeCode typeCode)
         {
             switch (typeCode)
             {
-                case TypeCode.String: return value.ToString() == "true" || value.ToString() == "1";
-                case TypeCode.Int32: return value.ToString() == "1";
-                case TypeCode.Boolean: return value;
-                case TypeCode.DBNull: return false;
+                case HTypeCode.String: return value.ToString() == "true" || value.ToString() == "1";
+                case HTypeCode.Int32: return value.ToString() == "1";
+                case HTypeCode.Boolean: return value;
+                case HTypeCode.DBNull: return false;
             }
 
             // Base
             return base.ConvertFrom(context, culture, value, typeCode);
         }
 
-        public override TypeCode GetTypeCodeCanConvert()
+        public override HTypeCode GetTypeCodeCanConvert()
         {
-            return TypeCode.Int32 | TypeCode.Boolean | TypeCode.String | TypeCode.DBNull;
+            return HTypeCode.Int32 | HTypeCode.Boolean | HTypeCode.String | HTypeCode.DBNull;
         }
     }
 }

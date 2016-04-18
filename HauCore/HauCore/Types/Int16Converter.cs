@@ -15,20 +15,20 @@ namespace HauCore.Types
                 return new[] { typeof(short) ,typeof(short?)};
             }
         }
-        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, TypeCode typeCode)
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, HTypeCode typeCode)
         {
             switch (typeCode)
             {
-                case TypeCode.String:
-                case TypeCode.Byte: return Convert.ToInt16(value);
-                case TypeCode.Int16: return value;
-                case TypeCode.DBNull: return 0;
+                case HTypeCode.String:
+                case HTypeCode.Byte: return Convert.ToInt16(value);
+                case HTypeCode.Int16: return value;
+                case HTypeCode.DBNull: return 0;
             }
             return base.ConvertFrom(context, culture, value, typeCode);
         }
-        public override TypeCode GetTypeCodeCanConvert()
+        public override HTypeCode GetTypeCodeCanConvert()
         {
-            return TypeCode.Int16 | TypeCode.String | TypeCode.Byte | TypeCode.DBNull;
+            return HTypeCode.Int16 | HTypeCode.String | HTypeCode.Byte | HTypeCode.DBNull;
         }
     }
 }

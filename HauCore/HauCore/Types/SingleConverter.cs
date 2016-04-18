@@ -15,21 +15,21 @@ namespace HauCore.Types
                 return new[] { typeof(float), typeof(float?) };
             }
         }
-        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, TypeCode typeCode)
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, HTypeCode typeCode)
         {
             switch (typeCode)
             {
-                case TypeCode.String: return value == null || string.IsNullOrEmpty(value.ToString()) ? 0 : Convert.ToSingle(value);
-                case TypeCode.Double: return Convert.ToSingle(value);
+                case HTypeCode.String: return value == null || string.IsNullOrEmpty(value.ToString()) ? 0 : Convert.ToSingle(value);
+                case HTypeCode.Double: return Convert.ToSingle(value);
 
-                case TypeCode.Single: return value;
-                case TypeCode.DBNull: return 0;
+                case HTypeCode.Single: return value;
+                case HTypeCode.DBNull: return 0;
             }
             return base.ConvertFrom(context, culture, value, typeCode);
         }
-        public override TypeCode GetTypeCodeCanConvert()
+        public override HTypeCode GetTypeCodeCanConvert()
         {
-            return TypeCode.Single | TypeCode.String | TypeCode.Double | TypeCode.DBNull;
+            return HTypeCode.Single |HTypeCode.String |HTypeCode.Double |HTypeCode.DBNull;
         }
     }
 }

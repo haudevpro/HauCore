@@ -12,24 +12,24 @@ namespace HauCore.Types
         {
             get
             {
-                return new[] { typeof(Double), typeof(Double?) };
+                return new[] { typeof(double), typeof(double?) };
             }
         }
-        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, TypeCode typeCode)
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, HTypeCode typeCode)
         {
             switch (typeCode)
             {
-                case TypeCode.String:
-                case TypeCode.Single: return Convert.ToDouble(value);
-                case TypeCode.Double: return value;
-                case TypeCode.DBNull: return 0;
+                case HTypeCode.String:
+                case HTypeCode.Single: return Convert.ToDouble(value);
+                case HTypeCode.Double: return value;
+                case HTypeCode.DBNull: return 0;
             }
             return base.ConvertFrom(context, culture, value, typeCode);
         }
 
-        public override TypeCode GetTypeCodeCanConvert()
+        public override HTypeCode GetTypeCodeCanConvert()
         {
-            return TypeCode.Double | TypeCode.String | TypeCode.DBNull;
+            return HTypeCode.Double | HTypeCode.String | HTypeCode.DBNull;
         }
     }
 }

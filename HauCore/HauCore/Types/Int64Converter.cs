@@ -15,23 +15,23 @@ namespace HauCore.Types
                 return new[] { typeof(long), typeof(long?) };
             }
         }
-        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, TypeCode typeCode)
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, HTypeCode typeCode)
         {
             switch (typeCode)
             {
-                case TypeCode.String:
-                case TypeCode.Int16:
-                case TypeCode.Int32:
-                case TypeCode.Decimal:
-                case TypeCode.Byte: return Convert.ToInt64(value);
-                case TypeCode.Int64: return value;
-                case TypeCode.DBNull: return 0;
+                case HTypeCode.String:
+                case HTypeCode.Int16:
+                case HTypeCode.Int32:
+                case HTypeCode.Decimal:
+                case HTypeCode.Byte: return Convert.ToInt64(value);
+                case HTypeCode.Int64: return value;
+                case HTypeCode.DBNull: return 0;
             }
             return base.ConvertFrom(context, culture, value, typeCode);
         }
-        public override TypeCode GetTypeCodeCanConvert()
+        public override HTypeCode GetTypeCodeCanConvert()
         {
-            return TypeCode.Int64 | TypeCode.String | TypeCode.Int16 | TypeCode.Int32 | TypeCode.Byte | TypeCode.Decimal | TypeCode.DBNull;
+            return HTypeCode.Int64 | HTypeCode.String | HTypeCode.Int16 | HTypeCode.Int32 | HTypeCode.Byte | HTypeCode.Decimal | HTypeCode.DBNull;
         }
     }
 }

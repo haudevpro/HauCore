@@ -15,13 +15,13 @@ namespace HauCore.Types
             }
         }
 
-        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, TypeCode typeCode)
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, HTypeCode typeCode)
         {
             switch (typeCode)
             {
-                case TypeCode.String: return new Guid(value.ToString());
-                case TypeCode.Object: return value;
-                case TypeCode.DBNull: return Guid.Empty;
+                case HTypeCode.String: return new Guid(value.ToString());
+                case HTypeCode.Guid: return value;
+                case HTypeCode.DBNull: return Guid.Empty;
             }
             return base.ConvertFrom(context, culture, value, typeCode);
         }
@@ -30,9 +30,9 @@ namespace HauCore.Types
         /// Có thể convert được từ những type nào
         /// </summary>
         /// <returns></returns>
-        public override TypeCode GetTypeCodeCanConvert()
+        public override HTypeCode GetTypeCodeCanConvert()
         {
-            return TypeCode.String | TypeCode.Object | TypeCode.DBNull;
+            return HTypeCode.String | HTypeCode.Guid | HTypeCode.DBNull;
         }
     }
 }

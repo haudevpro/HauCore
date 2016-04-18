@@ -13,31 +13,31 @@ namespace HauCore.Types
         {
             get
             {
-                return new[] { typeof(Decimal), typeof(Decimal?) };
+                return new[] { typeof(decimal), typeof(Decimal?) };
             }
         }
-        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, TypeCode typeCode)
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, HTypeCode typeCode)
         {
             switch (typeCode)
             {
-                case TypeCode.String:
+                case HTypeCode.String:
                     var strValue = value.ToString().GetOnlyDigital();
                     return strValue.IsNull() ? (decimal?)null : Convert.ToDecimal(strValue); // hanhth
-                //case TypeCode.String: return value.ToString().Trim().IsNull() ? (decimal?)null : Convert.ToDecimal(value.ToString().Replace(",",""), CultureInfo.GetCultureInfo("vi-VN"));//sonpc
-                case TypeCode.Int64:
-                case TypeCode.Int32:
-                case TypeCode.Int16:
-                case TypeCode.Double: return Convert.ToDecimal(value);
-                case TypeCode.Decimal: return value;
-                // case TypeCode.DBNull: return new Decimal(0);
-                case TypeCode.DBNull: return null;
+                //caseHTypeCode.String: return value.ToString().Trim().IsNull() ? (decimal?)null : Convert.ToDecimal(value.ToString().Replace(",",""), CultureInfo.GetCultureInfo("vi-VN"));//sonpc
+                case HTypeCode.Int64:
+                case HTypeCode.Int32:
+                case HTypeCode.Int16:
+                case HTypeCode.Double: return Convert.ToDecimal(value);
+                case HTypeCode.Decimal: return value;
+                // caseHTypeCode.DBNull: return new Decimal(0);
+                case HTypeCode.DBNull: return null;
             }
             return base.ConvertFrom(context, culture, value, typeCode);
         }
 
-        public override TypeCode GetTypeCodeCanConvert()
+        public override HTypeCode GetTypeCodeCanConvert()
         {
-            return TypeCode.Decimal | TypeCode.String | TypeCode.Int64 | TypeCode.Int32 | TypeCode.Int16 | TypeCode.Double | TypeCode.DBNull;
+            return HTypeCode.Decimal | HTypeCode.String | HTypeCode.Int64 | HTypeCode.Int32 | HTypeCode.Int16 | HTypeCode.Double | HTypeCode.DBNull;
         }
     }
 }

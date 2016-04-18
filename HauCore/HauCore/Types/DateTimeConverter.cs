@@ -16,19 +16,19 @@ namespace HauCore.Types
                 return new[]{ typeof(DateTime), typeof(DateTime?) };
             }
         }
-        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, TypeCode typeCode)
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, HTypeCode typeCode)
         {
             switch (typeCode)
             {
-                case TypeCode.String: return value.ToString().Trim().IsNull() ? (DateTime?)null : Convert.ToDateTime(value, CultureInfo.GetCultureInfo("vi-VN"));
-                case TypeCode.DateTime: return value;
-                case TypeCode.DBNull: return null;
+                case HTypeCode.String: return value.ToString().Trim().IsNull() ? (DateTime?)null : Convert.ToDateTime(value, CultureInfo.GetCultureInfo("vi-VN"));
+                case HTypeCode.DateTime: return value;
+                case HTypeCode.DBNull: return null;
             }
             return base.ConvertFrom(context, culture, value, typeCode);
         }
-        public override TypeCode GetTypeCodeCanConvert()
+        public override HTypeCode GetTypeCodeCanConvert()
         {
-            return TypeCode.DateTime | TypeCode.String | TypeCode.DBNull;
+            return HTypeCode.DateTime | HTypeCode.String | HTypeCode.DBNull;
         }
     }
 }

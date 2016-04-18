@@ -23,18 +23,18 @@ namespace HauCore.Types
      /// <param name="value"></param>
      /// <param name="typeCode"></param>
      /// <returns></returns>
-        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, TypeCode typeCode)
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, HTypeCode typeCode)
         {
             switch (typeCode)
             {
                 default: return value.ToString();
-                case TypeCode.DBNull: return string.Empty;
+                case HTypeCode.DBNull: return string.Empty;
             }
         }
 
-        public override TypeCode GetTypeCodeCanConvert()
+        public override HTypeCode GetTypeCodeCanConvert()
         {
-            return TypeCode.Empty;
+            return HTypeCode.UnKnown;
         }
 
         /// <summary>

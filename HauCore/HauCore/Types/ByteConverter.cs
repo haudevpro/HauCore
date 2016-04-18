@@ -15,21 +15,21 @@ namespace HauCore.Types
                 return new[] { typeof(byte) };
             }
         }
-        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, TypeCode typeCode)
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value, HTypeCode typeCode)
         {
             switch (typeCode)
             {
-                case TypeCode.Int32:
-                case TypeCode.String: return Convert.ToByte(value);
-                case TypeCode.Byte: return value;
-                case TypeCode.DBNull: return 0;
+                case HTypeCode.Int32:
+                case HTypeCode.String: return Convert.ToByte(value);
+                case HTypeCode.Byte: return value;
+                case HTypeCode.DBNull: return 0;
             }
 
             return base.ConvertFrom(context, culture, value, typeCode);
         }
-        public override TypeCode GetTypeCodeCanConvert()
+        public override HTypeCode GetTypeCodeCanConvert()
         {
-            return TypeCode.Byte | TypeCode.String | TypeCode.Int32 | TypeCode.DBNull;
+            return HTypeCode.Byte |HTypeCode.String |HTypeCode.Int32 |HTypeCode.DBNull;
         }
     }
 }
