@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region  ******** Copyright © 2016 HauCore ********
+using System;
+#endregion  ******** Copyright © 2016 HauCore ********
 
 namespace HauCore.Types
 {

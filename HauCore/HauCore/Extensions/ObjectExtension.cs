@@ -1,4 +1,6 @@
-﻿using HauCore.Types;
+﻿#region  ******** Copyright © 2016 HauCore ********
+using HauCore.Types;
+#endregion  ******** Copyright © 2016 HauCore ********
 
 namespace HauCore.Extensions
 {

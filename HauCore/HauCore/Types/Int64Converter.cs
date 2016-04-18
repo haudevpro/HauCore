@@ -1,11 +1,8 @@
-﻿using HauCore.Extensions;
+﻿#region  ******** Copyright © 2016 HauCore ********
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+#endregion  ******** Copyright © 2016 HauCore ********
 
 namespace HauCore.Types
 {

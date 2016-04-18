@@ -57,6 +57,8 @@
     <Compile Include="Types\StringConverter.cs" />
     <Compile Include="Types\TypeCodeExtender.cs" />
     <Compile Include="Types\TypeConverterBase.cs" />
+    <Compile Include="Utility\DictionaryCacheBase.cs" />
+    <Compile Include="Utility\Singleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Attributes\" />

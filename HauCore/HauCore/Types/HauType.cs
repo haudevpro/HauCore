@@ -1,7 +1,8 @@
-﻿using System;
+﻿#region  ******** Copyright © 2016 HauCore ********
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
+#endregion  ******** Copyright © 2016 HauCore ********
 
 namespace HauCore.Types
 {

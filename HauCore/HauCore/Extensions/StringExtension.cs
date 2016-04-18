@@ -1,5 +1,7 @@
-﻿using System;
+﻿#region  ******** Copyright © 2016 HauCore ********
+using System;
 using System.Text.RegularExpressions;
+#endregion  ******** Copyright © 2016 HauCore ********
 
 namespace HauCore.Extensions
 {
