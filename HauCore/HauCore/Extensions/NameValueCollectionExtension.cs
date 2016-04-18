@@ -5,9 +5,6 @@ using System.Collections.Specialized;
 
 namespace HauCore.Extensions
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public static class NameValueCollectionExtension
     {
         /// <summary>
